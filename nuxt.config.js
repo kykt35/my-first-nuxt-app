@@ -2,8 +2,13 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  server: {
+    port: 8000, // デフォルト: 3000
+    host: '0.0.0.0', // デフォルト: localhost
+  },
   head: {
     title: 'my-first-nuxt-app',
+    titleTemplate: '%s | Nuxt.js tag items viewer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,20 +37,20 @@ module.exports = {
     /*
   ** Build configuration
   */
-  build: {
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  }
+  // build: {
+  //   /*
+  //   ** Run ESLint on save
+  //   */
+  //   extend (config, { isDev, isClient }) {
+  //     if (isDev && isClient) {
+  //       config.module.rules.push({
+  //         enforce: 'pre',
+  //         test: /\.(js|vue)$/,
+  //         loader: 'eslint-loader',
+  //         exclude: /(node_modules)/
+  //       })
+  //     }
+  //   }
+  // }
 }
 
